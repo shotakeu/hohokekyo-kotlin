@@ -3,6 +3,7 @@ package tech.wandering_engineer.hohokekyo.Fragment
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,6 +23,7 @@ class HohokekyoFragment : Fragment() {
         hokekyoSound = MediaPlayer.create(context, R.raw.hohokekyo)
         val rootView = inflater.inflate(R.layout.fragment_main, container, false)
         rootView.uguisuButton.setOnClickListener {
+            Log.d("shotakeu", "uguisuButton")
             hokekyoSound?.start()
         }
         return rootView
@@ -37,8 +39,8 @@ class HohokekyoFragment : Fragment() {
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        fun newInstance(sectionNumber: Int): BaseFragment {
-            val fragment = BaseFragment()
+        fun newInstance(sectionNumber: Int): Fragment {
+            val fragment = HohokekyoFragment()
             val args = Bundle()
             args.putInt(ARG_SECTION_NUMBER, sectionNumber)
             fragment.arguments = args
