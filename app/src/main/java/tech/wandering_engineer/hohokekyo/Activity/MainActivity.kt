@@ -18,13 +18,14 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_main.view.*
 import tech.wandering_engineer.hohokekyo.Fragment.BaseFragment
+import tech.wandering_engineer.hohokekyo.Fragment.HelpFragment
 import tech.wandering_engineer.hohokekyo.Fragment.HohokekyoFragment
 import tech.wandering_engineer.hohokekyo.R
 
 class MainActivity : AppCompatActivity() {
 
     companion object {
-        const val TAB_NUM = 3
+        const val TAB_NUM = 2
     }
 
     /**
@@ -88,14 +89,14 @@ class MainActivity : AppCompatActivity() {
             // Return a PlaceholderFragment (defined as a static inner class below).
 
             when (position) {
-                1 -> {
+                0 -> {
                     Log.d("shotakeu", "this position is " + position)
                     return HohokekyoFragment.newInstance(position)
                 }
-                2 -> {
+                1 -> {
                     Log.d("shotakeu", "this position is " + position)
 
-                    return BaseFragment.newInstance(position)
+                    return HelpFragment.newInstance(position)
                 }
                 else -> {
                     Log.d("shotakeu", "this position is " + position)

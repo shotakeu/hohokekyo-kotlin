@@ -11,34 +11,29 @@ import tech.wandering_engineer.hohokekyo.R
 
 /**
  * Created by user on 2018/03/13.
- * うぐいすfragment
+ * Copied from placeholder fragment on MainActivity containing a simple view.
  */
-class HohokekyoFragment : Fragment() {
-
-    var hokekyoSound : MediaPlayer? = null
+open class HelpFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        hokekyoSound = MediaPlayer.create(context, R.raw.hohokekyo)
-        val rootView = inflater.inflate(R.layout.fragment_main, container, false)
-        rootView.uguisuButton.setOnClickListener {
-            hokekyoSound?.start()
-        }
+        val rootView = inflater.inflate(R.layout.fragment_help, container, false)
         return rootView
     }
+
     companion object {
         /**
          * The fragment argument representing the section number for this
          * fragment.
          */
-        private val ARG_SECTION_NUMBER = "section_number1"
+        private val ARG_SECTION_NUMBER = "section_number2"
 
         /**
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        fun newInstance(sectionNumber: Int): BaseFragment {
-            val fragment = BaseFragment()
+        fun newInstance(sectionNumber: Int): HelpFragment {
+            val fragment = HelpFragment()
             val args = Bundle()
             args.putInt(ARG_SECTION_NUMBER, sectionNumber)
             fragment.arguments = args
