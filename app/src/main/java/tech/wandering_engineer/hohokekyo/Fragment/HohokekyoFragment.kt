@@ -13,7 +13,7 @@ import tech.wandering_engineer.hohokekyo.R
  * Created by user on 2018/03/13.
  * うぐいすfragment
  */
-class HohokekyoFragment() : BaseFragment() {
+class HohokekyoFragment : Fragment() {
 
     var hokekyoSound : MediaPlayer? = null
 
@@ -22,7 +22,6 @@ class HohokekyoFragment() : BaseFragment() {
 
         hokekyoSound = MediaPlayer.create(context, R.raw.hohokekyo)
         val rootView = inflater.inflate(R.layout.fragment_main, container, false)
-        //rootView.section_label.text = getString(R.string.section_format, arguments.getInt(ARG_SECTION_NUMBER))
         rootView.uguisuButton.setOnClickListener {
             hokekyoSound?.start()
         }
