@@ -2,4 +2,24 @@
     <string name="app_name">hohokekyo</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="help_title">このアプリの使い方</string>
+    <string name="description">
+ ウグイスアイコンを押すだけ!\n
+ 「ホ～ホケキョ!」と音が出ます。\n
+ それだけです。\n
+【利用シーン】\n
+・お見合い\n
+・就職活動の面接\n
+・上司との会議\n
+・結婚のご挨拶\n
+・合コンで誰も喋らないとき\n
+・ひとりでいるのが寂しいとき\n\n
+
+そんな瞬間が来たら使ってください!\n
+\n
+※当アプリを利用したことに起因する事件・事故・精神的な苦痛等あらゆる係争に関して一切責任を負いません。
+    </string>
+    <string name="developer">製作者:wander_engineer@twitter</string>
+    <!-- The class name to the ScrollingChildBehavior required for AppBarLayout -->
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
 </resources>
