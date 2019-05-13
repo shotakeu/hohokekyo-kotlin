@@ -20,4 +20,6 @@
 ※当アプリを利用したことに起因する事件・事故・精神的な苦痛等あらゆる係争に関して一切責任を負いません。
     </string>
     <string name="developer">製作者:wander_engineer@twitter</string>
+    <!-- The class name to the ScrollingChildBehavior required for AppBarLayout -->
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
 </resources>

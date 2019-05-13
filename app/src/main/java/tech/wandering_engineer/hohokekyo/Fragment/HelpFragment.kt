@@ -1,19 +1,17 @@
 package tech.wandering_engineer.hohokekyo.Fragment
 
-import android.media.MediaPlayer
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_main.view.*
+import androidx.fragment.app.Fragment
 import tech.wandering_engineer.hohokekyo.R
 
 /**
  * Created by user on 2018/03/13.
  * Copied from placeholder fragment on MainActivity containing a simple view.
  */
-open class HelpFragment : Fragment() {
+class HelpFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
