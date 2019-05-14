@@ -4,22 +4,24 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+def supportLibraryVersion = '28.0.0'
+
 android {
     compileSdkVersion 28
     signingConfigs { //今回追加分 アプリの署名設定
         staging {
             storeFile file("./hohokekyo-kotlin.jks")
-            storePassword "Hmnfc996"
+            storePassword System.getenv("HOHOKEKYO_KSTOREPWD")
             keyAlias "hohokekyo"
-            keyPassword "Hmnfc996"
+            keyPassword System.getenv("HOHOKEKYO_KEPWD")
         }
     }
     defaultConfig {
         applicationId "tech.wandering_engineer.hohokekyo"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 2
-        versionName "1.0.1"
+        versionCode 3
+        versionName "1.0.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -52,6 +54,7 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.1.0-rc01'
     implementation 'com.google.android.material:material:1.1.0-alpha06'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha5'
+    implementation "com.android.support:design:$supportLibraryVersion"
     testImplementation 'junit:junit:4.13-beta-3'
     androidTestImplementation 'androidx.test:runner:1.2.0-beta01'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-beta01'
