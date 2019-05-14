@@ -3,17 +3,20 @@ package tech.wandering_engineer.hohokekyo.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import androidx.appcompat.app.AppCompatActivity
-import android.util.Log
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import tech.wandering_engineer.hohokekyo.Fragment.HelpFragment
 import tech.wandering_engineer.hohokekyo.Fragment.HohokekyoFragment
 import tech.wandering_engineer.hohokekyo.R
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
+
 
     companion object {
         const val TAB_NUM = 2
@@ -29,14 +32,21 @@ class MainActivity : AppCompatActivity() {
      */
     private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
 
+    private var mViewPager: ViewPager? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         setSupportActionBar(toolbar)
+        val tabLayout: TabLayout = findViewById(R.id.tabs)
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
+        mViewPager = findViewById(R.id.container)
+        mViewPager!!.adapter = mSectionsPagerAdapter
+        mViewPager!!.addOnPageChangeListener(this)
+        tabLayout.setupWithViewPager(mViewPager)
+        mViewPager!!.offscreenPageLimit = TAB_NUM
 
         // Set up the ViewPager with the sections adapter.
         container.adapter = mSectionsPagerAdapter
@@ -78,7 +88,7 @@ class MainActivity : AppCompatActivity() {
 //        return true
 //    }
 
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    //    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 //        // Handle action bar item clicks here. The action bar will
 //        // automatically handle clicks on the Home/Up button, so long
 //        // as you specify a parent activity in AndroidManifest.xml.
@@ -90,7 +100,16 @@ class MainActivity : AppCompatActivity() {
 //
 //        return super.onOptionsItemSelected(item)
 //    }
-
+    override fun onPageScrollStateChanged(state: Int) {}
+    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
+    override fun onPageSelected(position: Int) {
+        when(position) {
+            0 -> { //特に何もしない
+                 }
+            1 -> { //特に何もしない
+                 }
+        }
+    }
 
     /**
      * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -117,6 +136,18 @@ class MainActivity : AppCompatActivity() {
                     return HohokekyoFragment.newInstance(position)
                 }
             }
+        }
+
+        override fun getPageTitle(position: Int): CharSequence? {
+            when(position) {
+                0 -> {
+                    return getString(R.string.sound)
+                }
+                1 -> {
+                    return getString(R.string.help)
+                }
+            }
+            return null
         }
 
         override fun getCount(): Int {
