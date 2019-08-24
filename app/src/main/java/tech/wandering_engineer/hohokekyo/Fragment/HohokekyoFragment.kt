@@ -42,7 +42,9 @@ class HohokekyoFragment : Fragment() {
         hokekyoSound = MediaPlayer.create(context, R.raw.hohokekyo)
 
         rootView.uguisuButton.setOnClickListener {
+            it.alpha = 0.8F
             hokekyoSound?.start()
+            it.alpha = 1.0F
         }
 
         return rootView
