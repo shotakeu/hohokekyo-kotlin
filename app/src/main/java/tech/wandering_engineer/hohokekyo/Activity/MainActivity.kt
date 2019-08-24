@@ -1,6 +1,7 @@
 package tech.wandering_engineer.hohokekyo.Activity
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -101,13 +102,15 @@ class MainActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
 //        return super.onOptionsItemSelected(item)
 //    }
     override fun onPageScrollStateChanged(state: Int) {}
+
     override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
     override fun onPageSelected(position: Int) {
-        when(position) {
-            0 -> { //特に何もしない
-                 }
+        when (position) {
+            0 -> { //なにもしない
+
+            }
             1 -> { //特に何もしない
-                 }
+            }
         }
     }
 
@@ -139,7 +142,7 @@ class MainActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
         }
 
         override fun getPageTitle(position: Int): CharSequence? {
-            when(position) {
+            when (position) {
                 0 -> {
                     return getString(R.string.sound)
                 }
