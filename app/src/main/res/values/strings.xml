@@ -19,10 +19,15 @@
 \n
 ※当アプリを利用したことに起因する事件・事故・精神的な苦痛等あらゆる係争に関して一切責任を負いません。
     </string>
-    <string name="developer">製作者:wander_engineer@twitter</string>
+    <string name="developer">製作者:</string>
+    <string name="web">Web:</string>
+    <string name="twitterId">wander_engineer@twitter</string>
+    <string name="twitterUrl">https://twitter.com/wander_engineer</string>
+    <string name="webPageName">ホーホケキョ! 気まずい沈黙を打ち破れ！| takelab.note</string>
+    <string name="webUrl">https://wandering-engineer.tech/my-apps/hohokekyo/</string>
 
     <!-- for tabLayout-->
-    <string name="sound">ホケキョボタン</string>
+    <string name="sound">ホーホケキョ</string>
     <string name="help">ヘルプ</string>
     <string name="unknown">名無しのタブ</string>
 
