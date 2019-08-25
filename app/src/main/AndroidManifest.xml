@@ -31,7 +31,7 @@
 
                 <data
                     android:host="wandering-engineer.tech"
-                    android:pathPattern="/my-apps/hohokekyo/"
+                    android:pathPattern="/hohokekyo-appindexpage/"
                     android:scheme="https" />
             </intent-filter>
         </activity>
