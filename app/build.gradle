@@ -4,10 +4,10 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
-def supportLibraryVersion = '28.0.0'
+def supportLibraryVersion = '29.0.0'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     signingConfigs { //今回追加分 アプリの署名設定
         staging {
             storeFile file("./hohokekyo-kotlin.jks")
@@ -19,9 +19,9 @@ android {
     defaultConfig {
         applicationId "tech.wandering_engineer.hohokekyo"
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 7
-        versionName "1.0.6"
+        versionName "1.0.7"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
